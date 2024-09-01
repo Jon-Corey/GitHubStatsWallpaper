@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #53ff8a;
+    --secondary-color: #999999;
+    --text-color: #f9fbfc;
+    --bg-color: #000000;
+    --content-bg-color: #38383880;
+    --scale: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--scale);
+}
+
+body {
+    background: var(--bg-color) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAG0lEQVQYV2P8//+/FCMj4zMGJMCIzIGxKRQEAJgPBAbJqUVTAAAAAElFTkSuQmCC) repeat;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+header, main {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1250px) {
+    header, main {
+        flex-direction: column;
+    }
+}
+
+section {
+    flex: 1;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+}
+
+section > * {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+section h2 {
+    padding: 0.25rem;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    -webkit-box-shadow: 0px 0px 12px 0px var(--primary-color);
+    -moz-box-shadow: 0px 0px 12px 0px var(--primary-color);
+    box-shadow: 0px 0px 12px 0px var(--primary-color);
+}
+
+section .content {
+    padding: 0.5rem;
+    background-color: var(--content-bg-color);
+    border: 1px solid var(--secondary-color);
+    -webkit-box-shadow: 0px 0px 12px 0px var(--secondary-color);
+    -moz-box-shadow: 0px 0px 12px 0px var(--secondary-color);
+    box-shadow: 0px 0px 12px 0px var(--secondary-color);
+}
+
+section .content.centered {
+    text-align: center;
+}
+
+section .content > ul {
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+ul ul {
+    color: var(--text-color);
+}
+
+ul ul ul, ul.no-items {
+    color: var(--secondary-color);
+}
+
+.icon {
+    font-style: normal;
+    font-size: 0.75rem;
+}
+
+.icon-down-caret::before {
+    /*content: "\2BC6";*/
+    /*content: "\02C5";*/
+    content: "\25BC";
+    font-weight: bold;
+}
+
+.icon-right-caret::before {
+    /*content: "\2BC8";*/
+    /*content: "\02C3";*/
+    content: "\25BA";
+    font-weight: bold;
+}

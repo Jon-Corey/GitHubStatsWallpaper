@@ -1,0 +1,230 @@
+{
+    "dataLabel": {
+        "type": "label",
+        "value": "Data"
+    },
+    "gitHubToken": {
+        "text": "Enter GitHub Token",
+        "type": "textbox",
+        "value": "github_pat..."
+    },
+    "refreshTime": {
+        "max": 720,
+        "min": 1,
+        "step": 1,
+        "text": "Refresh Time",
+        "type": "slider",
+        "help": "The number of minutes to wait before refreshing the GitHub statistics",
+        "value": 10
+    },
+    "btnRefresh": {
+        "text": "Refresh",
+        "type": "button",
+        "value": "Refresh"
+    },
+
+    "uiLabel": {
+        "type": "label",
+        "value": "UI"
+    },
+    "primaryColor": {
+        "text": "Primary Color",
+        "type": "color",
+        "value": "#53FF8A"
+    },
+    "scale": {
+        "max": 500,
+        "min": 5,
+        "step": 5,
+        "text": "Scale",
+        "type": "slider",
+        "help": "Set the UI Scale",
+        "value": 100
+    },
+
+    "firstRepoLabel": {
+        "type": "label",
+        "value": "First Repo"
+    },
+    "firstRepo": {
+        "text": "First Repo (OWNER/REPO)",
+        "type": "textbox",
+        "value": ""
+    },
+    "firstRepoMaxPRs": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max PRs to Pull",
+        "type": "slider",
+        "help": "The maximum number of PRs to pull from GitHub",
+        "value": 30
+    },
+    "firstRepoShowDraftPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Draft PRs"
+    },
+    "firstRepoShowPrsAwaitingReview": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show PRs Awaiting Review"
+    },
+    "firstRepoShowApprovedPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Approved PRs"
+    },
+    "firstRepoShowLatestIssues": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Issues"
+    },
+    "firstRepoMaxIssues": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max Issues to Pull",
+        "type": "slider",
+        "help": "The maximum number of issues to pull from GitHub",
+        "value": 30
+    },
+    "firstRepoShowLatestReleases": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Releases"
+    },
+    "firstRepoMaxReleases": {
+        "max": 10,
+        "min": 1,
+        "step": 1,
+        "text": "Max Releases to Pull",
+        "type": "slider",
+        "help": "The maximum number of releases to pull from GitHub",
+        "value": 1
+    },
+
+    "secondRepoLabel": {
+        "type": "label",
+        "value": "Second Repo"
+    },
+    "secondRepo": {
+        "text": "Second Repo (OWNER/REPO)",
+        "type": "textbox",
+        "value": ""
+    },
+    "secondRepoMaxPRs": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max PRs to Pull",
+        "type": "slider",
+        "help": "The maximum number of PRs to pull from GitHub",
+        "value": 30
+    },
+    "secondRepoShowDraftPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Draft PRs"
+    },
+    "secondRepoShowPrsAwaitingReview": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show PRs Awaiting Review"
+    },
+    "secondRepoShowApprovedPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Approved PRs"
+    },
+    "secondRepoShowLatestIssues": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Issues"
+    },
+    "secondRepoMaxIssues": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max Issues to Pull",
+        "type": "slider",
+        "help": "The maximum number of issues to pull from GitHub",
+        "value": 30
+    },
+    "secondRepoShowLatestReleases": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Releases"
+    },
+    "secondRepoMaxReleases": {
+        "max": 10,
+        "min": 1,
+        "step": 1,
+        "text": "Max Releases to Pull",
+        "type": "slider",
+        "help": "The maximum number of releases to pull from GitHub",
+        "value": 1
+    },
+
+    "thirdRepoLabel": {
+        "type": "label",
+        "value": "Third Repo"
+    },
+    "thirdRepo": {
+        "text": "Third Repo (OWNER/REPO)",
+        "type": "textbox",
+        "value": ""
+    },
+    "thirdRepoMaxPRs": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max PRs to Pull",
+        "type": "slider",
+        "help": "The maximum number of PRs to pull from GitHub",
+        "value": 30
+    },
+    "thirdRepoShowDraftPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Draft PRs"
+    },
+    "thirdRepoShowPrsAwaitingReview": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show PRs Awaiting Review"
+    },
+    "thirdRepoShowApprovedPrs": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Approved PRs"
+    },
+    "thirdRepoShowLatestIssues": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Issues"
+    },
+    "thirdRepoMaxIssues": {
+        "max": 30,
+        "min": 1,
+        "step": 1,
+        "text": "Max Issues to Pull",
+        "type": "slider",
+        "help": "The maximum number of issues to pull from GitHub",
+        "value": 30
+    },
+    "thirdRepoShowLatestReleases": {
+        "type": "checkbox",
+        "value": true,
+        "text": "Show Latest Releases"
+    },
+    "thirdRepoMaxReleases": {
+        "max": 10,
+        "min": 1,
+        "step": 1,
+        "text": "Max Releases to Pull",
+        "type": "slider",
+        "help": "The maximum number of releases to pull from GitHub",
+        "value": 1
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "AppVersion": "0.2.4.0",
+    "Title": "GitHub Stats",
+    "Thumbnail": "thumbnail.jpg",
+    "Preview": "preview.gif",
+    "Desc": "Displays info about your favorite GitHub Repos. Check the configuration to get started.",
+    "Author": "Jon Corey",
+    "License": null,
+    "Contact": "https://github.com/Jon-Corey/GitHubStatsWallpaper",
+    "Type": 1,
+    "FileName": "index.html",
+    "Arguments": null,
+    "IsAbsolutePath": false
+}
