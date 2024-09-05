@@ -40,7 +40,7 @@ This is a wallpaper built to be used with [Lively](https://github.com/rocksdanis
 
 ## Building From Source
 
-Taking the source code and putting it into a format that Lively can use is as simple as zipping up all of the files into a .zip file. The `README.md`, `cover.png`, and `LICENSE` files can be ignored as they are only used on GitHub and not on the actual wallpaper.
+Taking the source code and putting it into a format that Lively can use is as simple as zipping up all of the required files into a .zip file. The `PackageFiles.ps1` script can handle this for you so that you don't have to worry about which files should be included or not. You will need to install [Powershell](https://github.com/PowerShell/PowerShell) in order to run this script.
 
 Since this is just HTML, CSS, and JavaScript, it can be run locally like any other static site. I really like using the [Live Server](https://github.com/ritwickdey/vscode-live-server) extension for [VS Code](https://code.visualstudio.com/). For testing the parameters, you can either change the default values in the `scripts.js` file or you can use your developer console to call the `livelyPropertyListener` function.
 
