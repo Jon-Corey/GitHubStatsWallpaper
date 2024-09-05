@@ -1,5 +1,5 @@
 # Define the ignored files
-$ignored = @('.git', 'cover.png', 'LICENSE', 'README.md', 'PackageFiles.ps1')
+$ignored = @('.git', '.gitignore', 'cover.png', 'LICENSE', 'README.md', 'PackageFiles.ps1')
 
 # Get all items in the current folder
 $items = Get-ChildItem -Force -Name -Exclude *.zip
