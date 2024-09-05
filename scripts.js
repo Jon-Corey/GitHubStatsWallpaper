@@ -34,14 +34,14 @@ var thirdRepoMaxIssues = 30;
 var thirdRepoShowLatestReleases = true;
 var thirdRepoMaxReleases = 1;
 
-var timeInterval;
+var dateTimeInterval;
 var renderTimeout;
 
 /**
  * Renders the data on the screen. Meant to be run whenever the data needs to be updated.
  */
 async function render() {
-    clearInterval(timeInterval);
+    clearInterval(dateTimeInterval);
     clearTimeout(renderTimeout);
 
     // Theme
@@ -52,7 +52,8 @@ async function render() {
         document.documentElement.style.setProperty('--scale', `${scale}%`);
     }
 
-    // Date
+    // Date and Time
+    document.getElementById("time-content").textContent = new Date().toLocaleTimeString("en-US");
     document.getElementById("date-content").textContent = new Date().toLocaleDateString("en-US", {
         weekday: 'long',
         year: 'numeric',
@@ -60,10 +61,14 @@ async function render() {
         day: 'numeric'
     });
 
-    // Time
-    document.getElementById("time-content").textContent = new Date().toLocaleTimeString("en-US");
-    timeInterval = setInterval(() => {
+    dateTimeInterval = setInterval(() => {
         document.getElementById("time-content").textContent = new Date().toLocaleTimeString("en-US");
+        document.getElementById("date-content").textContent = new Date().toLocaleDateString("en-US", {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
     }, 1000)
 
     // Repo Headers
