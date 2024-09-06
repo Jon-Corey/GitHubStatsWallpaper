@@ -147,7 +147,7 @@ async function getData(repo, maxPrs, showDraftPrs, showPrsAwaitingReview, showAp
             object[pr.title] = {};
             object[pr.title]["Id"] = `#${pr.number}`;
             object[pr.title]["User"] = pr.user.login?.toString();
-            object[pr.title]["Created"] = pr.created_at?.toString();
+            object[pr.title]["Created"] = new Date(pr.created_at)?.toLocaleString("en-US");
             object[pr.title]["Reviewers"] = [];
             for (reviewer of pr.requested_reviewers) {
                 object[pr.title]["Reviewers"].push(reviewer.login?.toString());
@@ -202,7 +202,7 @@ async function getData(repo, maxPrs, showDraftPrs, showPrsAwaitingReview, showAp
                 object[issue.title] = {};
                 object[issue.title]["Id"] = `#${issue.number}`;
                 object[issue.title]["User"] = issue.user.login?.toString();
-                object[issue.title]["Created"] = issue.created_at?.toString();
+                object[issue.title]["Created"] = new Date(issue.created_at)?.toLocaleString("en-US");
                 if (issue.draft === true) {
                     object[issue.title]["Draft"] = "true";
                 }
@@ -224,7 +224,7 @@ async function getData(repo, maxPrs, showDraftPrs, showPrsAwaitingReview, showAp
             let object = {};
     
             object[release.tag_name] = {};
-            object[release.tag_name]["Created"] = release.created_at?.toString();
+            object[release.tag_name]["Created"] = new Date(release.created_at)?.toLocaleString("en-US");
             object[release.tag_name]["Body"] = release.body?.toString()?.trim()
                 ?.replace(/&/g, '&amp;')
                 ?.replace(/</g, '&lt;')
