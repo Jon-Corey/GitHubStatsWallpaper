@@ -196,17 +196,19 @@ async function getData(repo, maxPrs, showDraftPrs, showPrsAwaitingReview, showAp
         let latestIssues = [];
 
         for (issue of issues) {
-            let object = {};
+            if (issue.hasOwnProperty("pull_request") == false) {
+                let object = {};
     
-            object[issue.title] = {};
-            object[issue.title]["Id"] = `#${issue.number}`;
-            object[issue.title]["User"] = issue.user.login?.toString();
-            object[issue.title]["Created"] = issue.created_at?.toString();
-            if (issue.draft === true) {
-                object[issue.title]["Draft"] = "true";
+                object[issue.title] = {};
+                object[issue.title]["Id"] = `#${issue.number}`;
+                object[issue.title]["User"] = issue.user.login?.toString();
+                object[issue.title]["Created"] = issue.created_at?.toString();
+                if (issue.draft === true) {
+                    object[issue.title]["Draft"] = "true";
+                }
+        
+                latestIssues.push(object);
             }
-    
-            latestIssues.push(object);
         }
 
         data["Latest Issues"] = latestIssues;
