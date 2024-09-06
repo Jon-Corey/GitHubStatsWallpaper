@@ -69,7 +69,7 @@ section .content.centered {
     text-align: center;
 }
 
-section .content > ul {
+section .content > ul, .toast > ul {
     padding-left: 0;
 }
 
@@ -105,4 +105,28 @@ ul ul ul, ul.no-items {
     /*content: "\02C3";*/
     content: "\25BA";
     font-weight: bold;
+}
+
+.toast {
+    opacity: 0;
+    transition: opacity 1s;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--content-bg-color);
+    border: 1px solid var(--secondary-color);
+    -webkit-box-shadow: 0px 0px 12px 0px var(--secondary-color);
+    -moz-box-shadow: 0px 0px 12px 0px var(--secondary-color);
+    box-shadow: 0px 0px 12px 0px var(--secondary-color);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.toast.shown {
+    opacity: 1;
+}
+
+.toast p {
+    margin: 0;
 }

@@ -113,6 +113,65 @@ async function render() {
     renderTimeout = setTimeout(render, refreshTime * 60000);
 }
 
+async function checkForUpdates() {
+    // Get Local Version
+    const response = await fetch("/LivelyInfo.json");
+    if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    const localVersion = json?.AppVersion?.split(".", 3);
+
+    // Get Remote Version
+    const latestRelease = await makeRequest(`https://api.github.com/repos/Jon-Corey/GitHubStatsWallpaper/releases/latest`);
+
+    const remoteVersion = latestRelease?.tag_name?.replace("v", "")?.split(".", 3);
+
+    // Validate the Versions
+    if (localVersion.length != 3) {
+        console.error(`The local version number does not have the correct number of parts. RawValue: ${json?.AppVersion}; Length: ${localVersion.length};`);
+        return;
+    }
+    else if (remoteVersion.length != 3) {
+        console.error(`The remote version number does not have the correct number of parts. RawValue: ${latestRelease?.tag_name}; Length: ${remoteVersion.length};`);
+        return;
+    }
+
+    // Compare Versions
+    let updateAvailable = false;
+    if (remoteVersion[0] > localVersion[0]) {
+        // If Major Version is Higher on Remote
+        updateAvailable = true;
+    }
+    else if (remoteVersion[1] > localVersion[1]) {
+        // If Minor Version is Higher on Remote
+        updateAvailable = true;
+    }
+    else if (remoteVersion[2] > localVersion[2]) {
+        // If Bugfix Version is Higher on Remote
+        updateAvailable = true;
+    }
+
+    // Show Update Notification
+    if (updateAvailable == true) {
+        const updateData = {};
+        updateData["An update is available"] = {};
+        updateData["An update is available"]["Current version"] = localVersion.join(".");
+        updateData["An update is available"]["Remote version"] = remoteVersion.join(".");
+
+        const updateToast = document.getElementById("update-toast");
+
+        renderDataRecursive(updateData, updateToast);
+
+        // Show The Notification And Then Hide It After 15 Seconds
+        updateToast.classList.add("shown");
+        setTimeout(() => {
+            updateToast.classList.remove("shown");
+        }, 15000);
+    }
+}
+
 /**
  * Gets data about the specified repo.
  * @param {string} repo The repo to get data for (OWNER/REPO).
@@ -434,3 +493,6 @@ setTimeout(render, 250);
 
 // Render again to make sure
 setTimeout(render, 1000);
+
+// Check for updates
+checkForUpdates();
